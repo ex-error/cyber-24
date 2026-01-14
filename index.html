@@ -3,55 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber 24 Animation</title>
+    <title>404 Not Found</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-        
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #0a0a0a;
+            background-color: #0f0f0f;
             color: #00ff00;
-            font-family: 'Press Start 2P', cursive;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .container {
+            font-family: 'Courier New', monospace;
             text-align: center;
+            padding: 50px;
+            height: 100vh;
+            margin: 0;
         }
-
-        .text {
-            font-size: 30px;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid #00ff00;
-            width: 0;
-            animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+        h1 {
+            font-size: 100px;
+            margin-bottom: 20px;
+            animation: glitch 1.5s infinite;
         }
-
-        @keyframes typing {
-            from {
-                width: 0;
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .glitch {
+            color: #00ff00;
+            position: relative;
+            display: inline-block;
+            font-size: 100px;
+        }
+        .glitch:after {
+            content: '404 ERROR';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            clip-path: inset(0 0 0 0);
+            animation: glitch-effect 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 0 0 10px rgba(0,255,0,0.8), 0 0 20px rgba(0,255,0,0.8), 0 0 30px rgba(0,255,0,0.8), 0 0 40px rgba(0,255,0,0.8);
             }
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink {
             50% {
-                border-color: transparent;
+                text-shadow: 0 0 20px rgba(0,255,0,0.8), 0 0 30px rgba(0,255,0,0.8), 0 0 40px rgba(0,255,0,0.8), 0 0 50px rgba(0,255,0,0.8);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(0,255,0,0.8), 0 0 20px rgba(0,255,0,0.8), 0 0 30px rgba(0,255,0,0.8), 0 0 40px rgba(0,255,0,0.8);
+            }
+        }
+        @keyframes glitch-effect {
+            0% {
+                transform: translate(-5px, -5px);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(5px, 5px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-5px, -5px);
+                opacity: 0.7;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="text">Cyber 24 - we work protect to Bangladesh</div>
-    </div>
+
+    <h1 class="glitch">404 ERROR</h1>
+    <p>Uh oh! The page you're looking for has gone offline... or maybe it never existed.</p>
+
 </body>
 </html>
